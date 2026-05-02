@@ -1,0 +1,96 @@
+{
+  "id": "lightning",
+  "name": "Weather Alerts",
+  "version": "0.1.0",
+  "description": "Display active National Weather Service severe weather alerts for your area.",
+  "author": "FiestaBoard Team",
+  "icon": "zap",
+  "category": "weather",
+  "repository": "https://github.com/Fiestaboard/fiestaboard-plugin--lightning",
+  "documentation": "README.md",
+  "min_refresh_seconds": 180,
+  "settings_schema": {
+    "type": "object",
+    "properties": {
+      "enabled": {
+        "type": "boolean",
+        "title": "Enabled",
+        "default": false
+      },
+      "state": {
+        "type": "string",
+        "title": "US State",
+        "description": "Two-letter US state code to filter alerts (e.g. CA, NY, TX).",
+        "default": "CA",
+        "minLength": 2,
+        "maxLength": 2
+      },
+      "refresh_seconds": {
+        "type": "integer",
+        "title": "Refresh Interval (seconds)",
+        "description": "How often to check for new alerts.",
+        "default": 180,
+        "minimum": 60
+      }
+    },
+    "required": [
+      "state"
+    ]
+  },
+  "variables": {
+    "groups": {
+      "alert": {
+        "label": "Active Alert"
+      },
+      "stats": {
+        "label": "Statistics"
+      }
+    },
+    "simple": {
+      "event": {
+        "description": "Alert event name (e.g. Tornado Warning)",
+        "type": "string",
+        "max_length": 22,
+        "group": "alert",
+        "example": "Tornado Warning"
+      },
+      "headline": {
+        "description": "Short alert headline",
+        "type": "string",
+        "max_length": 22,
+        "group": "alert",
+        "example": "...Tornado Warning..."
+      },
+      "severity": {
+        "description": "Alert severity (Extreme/Severe/Moderate/Minor)",
+        "type": "string",
+        "max_length": 10,
+        "group": "alert",
+        "example": "Extreme"
+      },
+      "alert_count": {
+        "description": "Total number of active alerts in the state",
+        "type": "integer",
+        "max_length": 3,
+        "group": "stats",
+        "example": "3"
+      },
+      "all_clear": {
+        "description": "Yes if no active alerts",
+        "type": "string",
+        "max_length": 3,
+        "group": "stats",
+        "example": "No"
+      }
+    }
+  },
+  "screenshots": [
+    {
+      "src": "docs/board-display.png",
+      "alt": "Weather Alerts displayed on a Vestaboard",
+      "caption": "Example board output using the default template",
+      "primary": true
+    }
+  ],
+  "api_docs": "https://www.weather.gov/documentation/services-web-api"
+}

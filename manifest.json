@@ -1,7 +1,7 @@
 {
   "id": "lightning",
   "name": "Weather Alerts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Display active National Weather Service severe weather alerts for your area.",
   "author": "FiestaBoard Team",
   "icon": "zap",
@@ -92,5 +92,48 @@
       "primary": true
     }
   ],
-  "api_docs": "https://www.weather.gov/documentation/services-web-api"
+  "api_docs": "https://www.weather.gov/documentation/services-web-api",
+  "demo": {
+    "name": "Weather Alerts Demo",
+    "device_type": "flagship",
+    "config": {
+      "enabled": true,
+      "state": "CA",
+      "refresh_seconds": 180
+    },
+    "template": [
+      "CA Weather Alerts",
+      "",
+      "{{lightning.event}}",
+      "Severity: {{lightning.severity}}",
+      "{{lightning.alert_count}} active alert(s)",
+      "All clear: {{lightning.all_clear}}"
+    ],
+    "line_metadata": [
+      {
+        "alignment": "center",
+        "wrap": false
+      },
+      {
+        "alignment": "left",
+        "wrap": false
+      },
+      {
+        "alignment": "left",
+        "wrap": false
+      },
+      {
+        "alignment": "left",
+        "wrap": false
+      },
+      {
+        "alignment": "left",
+        "wrap": false
+      },
+      {
+        "alignment": "left",
+        "wrap": false
+      }
+    ]
+  }
 }

@@ -1,7 +1,7 @@
 {
   "id": "lightning",
   "name": "Weather Alerts",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Display active National Weather Service severe weather alerts for your area.",
   "author": "FiestaBoard Team",
   "icon": "zap",

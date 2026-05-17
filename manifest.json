@@ -1,7 +1,7 @@
 {
   "id": "lightning",
   "name": "Weather Alerts",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Display active National Weather Service severe weather alerts for your area.",
   "author": "FiestaBoard Team",
   "icon": "zap",
@@ -94,46 +94,69 @@
   ],
   "api_docs": "https://www.weather.gov/documentation/services-web-api",
   "demo": {
-    "name": "Weather Alerts Demo",
-    "device_type": "flagship",
-    "config": {
-      "enabled": true,
-      "state": "CA",
-      "refresh_seconds": 180
+    "flagship": {
+      "name": "Weather Alerts Demo",
+      "config": {
+        "enabled": true,
+        "state": "CA",
+        "refresh_seconds": 180
+      },
+      "template": [
+        "CA Weather Alerts",
+        "",
+        "{{lightning.event}}",
+        "Severity: {{lightning.severity}}",
+        "{{lightning.alert_count}} active alert(s)",
+        "All clear: {{lightning.all_clear}}"
+      ],
+      "line_metadata": [
+        {
+          "alignment": "center",
+          "wrap": false
+        },
+        {
+          "alignment": "left",
+          "wrap": false
+        },
+        {
+          "alignment": "left",
+          "wrap": false
+        },
+        {
+          "alignment": "left",
+          "wrap": false
+        },
+        {
+          "alignment": "left",
+          "wrap": false
+        },
+        {
+          "alignment": "left",
+          "wrap": false
+        }
+      ]
     },
-    "template": [
-      "CA Weather Alerts",
-      "",
-      "{{lightning.event}}",
-      "Severity: {{lightning.severity}}",
-      "{{lightning.alert_count}} active alert(s)",
-      "All clear: {{lightning.all_clear}}"
-    ],
-    "line_metadata": [
-      {
-        "alignment": "center",
-        "wrap": false
-      },
-      {
-        "alignment": "left",
-        "wrap": false
-      },
-      {
-        "alignment": "left",
-        "wrap": false
-      },
-      {
-        "alignment": "left",
-        "wrap": false
-      },
-      {
-        "alignment": "left",
-        "wrap": false
-      },
-      {
-        "alignment": "left",
-        "wrap": false
-      }
-    ]
+    "note": {
+      "name": "Weather Alerts (Note)",
+      "template": [
+        "WEATHER ALERTS",
+        "{{lightning.event}}",
+        "SEV {{lightning.severity}}"
+      ],
+      "line_metadata": [
+        {
+          "alignment": "left",
+          "wrap": false
+        },
+        {
+          "alignment": "left",
+          "wrap": true
+        },
+        {
+          "alignment": "left",
+          "wrap": false
+        }
+      ]
+    }
   }
 }

@@ -60,8 +60,8 @@ class LightningPlugin(PluginBase):
             )
 
             top = features[0]["properties"]
-            event = str(top.get("event", "Unknown"))[:22]
-            headline = str(top.get("headline", ""))[:22]
+            event = str(top.get("event", "Unknown"))
+            headline = str(top.get("headline", ""))
             severity = str(top.get("severity", "Unknown"))
 
             return PluginResult(

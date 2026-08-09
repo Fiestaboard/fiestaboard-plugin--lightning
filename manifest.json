@@ -92,6 +92,28 @@
       "primary": true
     }
   ],
+  "teaser": "{63}TORNADO WARN",
+  "previews": [
+    {
+      "device_type": "flagship",
+      "rows": [
+        "  CA Weather Alerts",
+        "",
+        "Tornado Warning",
+        "Severity: Extreme",
+        "3 active alert(s)",
+        "All clear: No"
+      ]
+    },
+    {
+      "device_type": "note",
+      "rows": [
+        "{63}{63}{63}{63}{63}{63}{63}{63}{63}{63}{63}{63}{63}{63}{63}",
+        "TORNADO WARNING",
+        "{63}{63}{63}{63}{63}{63}{63}{63}{63}{63}{63}{63}{63}{63}{63}"
+      ]
+    }
+  ],
   "api_docs": "https://www.weather.gov/documentation/services-web-api",
   "demo": {
     "flagship": {
